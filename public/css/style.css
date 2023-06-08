@@ -1,0 +1,248 @@
+/* Custom styles */
+body {
+    padding-top: 60px;
+    font-family: 'Noto Serif', serif;
+    background-color: #505050;
+  }
+
+  .navbar {
+    background-color: #d8d7d7;
+    margin-bottom: 10;
+    font-weight: bold;
+  }
+
+  .navbar-brand {
+    margin-right: 2rem;
+  }
+
+  .navbar-brand img{
+    height: 50px;
+  }
+
+  .navbar-text {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  .jumbotron {
+    /* background-color: #505050; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    margin-bottom: 0;
+    margin-top: 25px;
+  }
+  
+  .jumbotron-content {
+    margin-left: 2rem;
+  }
+  
+  .jumbotron h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Noto Serif', serif;
+  }
+  
+  .jumbotron p {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+  
+  .jumbotron-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* Adjust the value to set the aspect ratio (e.g., 75% for 4:3) */
+    overflow: hidden;
+  }
+  
+  .jumbotron-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  
+  .profil {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+    text-align: center;
+    background-color: #d8d7d7;
+  }
+
+  .profil h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+
+  .profil p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  .visi-misi {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 50px 0;
+    background-color: #d8d7d7;
+  }
+
+  .visi-misi h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+
+  .visi-misi .row {
+    justify-content: center;
+  }
+
+  .visi-misi .col-md-6 {
+    margin-bottom: 30px;
+  }
+
+  .visi-misi p{
+    font-size: 20px;
+  }
+
+  .features {
+    padding: 80px 0;
+    background-color: #505050;
+    color: #ffffff;
+  }
+
+  .features .row {
+    justify-content: center;
+  }
+
+  .features .col-lg-4 {
+    margin-bottom: 30px;
+  }
+
+  .features img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .features h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .features h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .features p {
+    font-size: 20px;
+  }
+
+  .cta {
+    background-color: #d8d7d7;
+    text-align: center;
+    padding: 80px 0;
+  }
+
+  .cta h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .cta p {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .cta .btn-primary {
+    font-size: 18px;
+    padding: 15px 30px;
+  }
+
+  .modal-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* login */
+
+  /* .login-popup .modal-dialog {
+    max-width: 400px;
+  } */
+
+  .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+    margin-top: 25px;
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+  
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+  
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
+  
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  /* footer */
+
+  .footer {
+    background-color: #505050;
+    padding: 40px 0;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .footer h4 {
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .footer p {
+    margin-bottom: 10px;
+  }
