@@ -17,4 +17,12 @@ class Dashboard extends BaseController
         // Menampilkan view dashboard dengan data yang dipassing
         return view('dashboard/index', $data);
     }
+
+    public function logout()
+  {
+      // Lakukan logika logout di sini
+  
+      // Redirect ke halaman login setelah logout
+      return redirect()->to(base_url('user/login'));
+  }
 }

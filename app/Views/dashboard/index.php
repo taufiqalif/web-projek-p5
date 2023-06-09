@@ -1,40 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
+<?= $this->extend('dashboard/layouts/halaman'); ?>
 
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+<?= $this->section('isi'); ?>
 
-    h1 {
-      text-align: center;
-    }
 
-    .welcome-message {
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    .logout-link {
-      text-align: center;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
 <div class="container">
   <h1>Welcome to the Dashboard</h1>
   <div class="welcome-message">
@@ -45,5 +13,4 @@
   </div>
 </div>
 
-</body>
-</html>
+<?= $this->endSection(); ?>

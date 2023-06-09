@@ -101,10 +101,10 @@ if ($user && password_verify($password, $user['password'])) {
 
   public function logout()
   {
-    // Lakukan proses logout
-    // Misalnya, hapus session atau data autentikasi
-
-    // Redirect ke halaman login setelah logout
-    return redirect()->to('login');
+      // Lakukan logika logout di sini
+  
+      // Redirect ke halaman login setelah logout
+      return redirect()->to(base_url('user/login'));
   }
+  
 }

@@ -41,7 +41,11 @@ $routes->get('user/login', 'User::login');
 $routes->get('registrasi', 'User::registration', ['as' => 'user.registration']);
 $routes->get('dashboard/index', 'Dashboard::index');
 $routes->add('user/processLogin', 'User::processLogin', ['as' => 'login']);
+// $routes->get('dashboard/signout', 'Dashboard::logout');
+// $routes->get('dashboard/(:any)', 'Dashboard::logout/$1');
 $routes->get('dashboard/signout', 'Dashboard::logout');
+
+
 
 $routes->group('user', ['namespace' => 'App\Controllers'], function($routes) {
     // Route untuk halaman login
