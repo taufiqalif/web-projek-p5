@@ -37,6 +37,23 @@ $routes->get('/profil', 'Pages::profil');
 
 // login
 $routes->get('/login', 'User::login');
+$routes->get('user/login', 'User::login');
+$routes->get('registrasi', 'User::registration', ['as' => 'user.registration']);
+$routes->get('dashboard/index', 'Dashboard::index');
+$routes->add('user/processLogin', 'User::processLogin', ['as' => 'login']);
+$routes->get('dashboard/signout', 'Dashboard::logout');
+
+$routes->group('user', ['namespace' => 'App\Controllers'], function($routes) {
+    // Route untuk halaman login
+    $routes->get('login', 'User::login', ['as' => 'user.login']);
+    // Route untuk proses login
+    $routes->post('processLogin', 'User::processLogin', ['as' => 'user.processLogin']);
+    // Route untuk halaman registrasi
+    $routes->get('registration', 'User::registration', ['as' => 'user.registration']);
+    // Route untuk proses registrasi
+    $routes->post('processRegistration', 'User::processRegistration', ['as' => 'user.processRegistration']);
+});
+
 
 /*
  * --------------------------------------------------------------------

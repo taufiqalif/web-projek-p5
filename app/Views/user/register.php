@@ -34,9 +34,9 @@
   </head>
   <body class="text-center">
     <main class="form-signin">
-        <form action="<?= base_url('user/processLogin'); ?>" method="post">
+        <form action="<?= base_url('user/processRegistration'); ?>" method="post">
             <img class="mb-4" src="<?= base_url('img/logo-removebg-preview.png'); ?>" alt="" width="80" height="80">
-            <h1 class="h3 mb-3 fw-normal">Sign in</h1>
+            <h1 class="h3 mb-3 fw-normal">Registrasi</h1>
 
             <?php if (session()->getFlashdata('error')): ?>
                 <div class="alert alert-danger" role="alert">
@@ -53,8 +53,8 @@
                 <label for="floatingPassword">Password</label>
             </div>
 
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Masuk</button>
-            <a href="<?= base_url('/registrasi'); ?>" class="mt-3">registrasi</a>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+            <a href="<?= base_url('/login'); ?>">Login</a>
             <a href="<?= base_url('/'); ?>" class="mt-3">Back To Menu</a>
             <p class="mt-5 mb-3 text-muted">&copy; <?= date('Y'); ?></p>
         </form>
