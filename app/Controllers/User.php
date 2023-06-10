@@ -3,18 +3,25 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use CodeIgniter\Session\Session;
 
 class User extends BaseController
 {
-  public function login()
-  {
-    $data = [
-      'title' => 'Selamat Datang'
-    ];
+    protected $session;
 
-    return view('user/login', $data);
-  }
+    public function __construct()
+    {
+        $this->session = session();
+    }
 
+    public function login()
+    {
+        $data = [
+            'title' => 'Selamat Datang'
+        ];
+
+        return view('user/login', $data);
+    }
 
     public function registration()
     {
@@ -59,52 +66,55 @@ class User extends BaseController
         $model->insert($data);
 
         // Redirect ke halaman login dengan pesan sukses
-        return redirect()->to('user/login')->with('success', 'Registrasi berhasil. Silakan login dengan akun baru Anda.');
+        return redirect()->to(base_url('user/login'))->with('success', 'Registrasi berhasil. Silakan login dengan akun baru Anda.');
     }
 
+    public function processLogin()
+    {
+        $username = $this->request->getPost('username');
+        $password = $this->request->getPost('password');
 
+        // Cek apakah user ditemukan
+        $userModel = new UserModel();
+        $user = $userModel->where('username', $username)->first();
 
+        if ($user && password_verify($password, $user['password'])) {
+            // Simpan username dan role ke dalam sesi
+            $this->session->set('username', $user['username']);
+            $this->session->set('role', $user['role']);
 
-  public function processLogin()
-  {
-      $username = $this->request->getPost('username');
-      $password = $this->request->getPost('password');
-  
-      // Cek apakah user ditemukan
-$userModel = new UserModel();
-$user = $userModel->where('username', $username)->first();
+            // Cek peran user
+            if ($user['role'] == 1) {
+                // Jika peran adalah admin, redirect ke halaman dashboard admin
+                return redirect()->to(base_url('dashboard/admin'));
+            } else {
+                // Jika peran adalah user, redirect ke halaman dashboard user
+                return redirect()->to(base_url('dashboard/index'));
+            }
+        } else {
+            // Jika tidak valid, kembali ke halaman login dengan pesan error
+            $data = [
+                'title' => 'Selamat Datang',
+                'error' => 'Username atau password salah',
+                'username' => $username
+            ];
 
-if ($user && password_verify($password, $user['password'])) {
-    // Cek peran user
-    if ($user['role'] == 1) {
-        // Jika peran adalah admin, redirect ke halaman dashboard admin
-        return redirect()->to('dashboard/index');
-    } else {
-        // Jika peran adalah user, redirect ke halaman dashboard user
-        return redirect()->to('dashboard/index');
+            // Tampilkan pesan error dalam bentuk alert
+            $this->session->setFlashdata('error', 'Username atau password salah');
+
+            return view('user/login', $data);
+        }
     }
-} else {
-    // Jika tidak valid, kembali ke halaman login dengan pesan error
-    $data = [
-        'title' => 'Selamat Datang',
-        'error' => 'Username atau password salah'
-    ];
 
-    // Tampilkan pesan error dalam bentuk alert
-    session()->setFlashdata('error', 'Username atau password salah');
+    public function logout()
+    {
+        // Lakukan logika logout di sini
 
-    return view('user/login', $data);
-}
-  }
-  
+        // Hapus data sesi username dan role
+        $this->session->remove('username');
+        $this->session->remove('role');
 
-
-  public function logout()
-  {
-      // Lakukan logika logout di sini
-  
-      // Redirect ke halaman login setelah logout
-      return redirect()->to(base_url('user/login'));
-  }
-  
+        // Redirect ke halaman login setelah logout
+        return redirect()->to(base_url('user/login'));
+    }
 }

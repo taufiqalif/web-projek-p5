@@ -61,6 +61,7 @@ $routes->group('user', ['namespace' => 'App\Controllers'], function($routes) {
 // dashboard
 $routes->get('dashboard/dashboard', 'Dashboard::index');
 $routes->get('dashboard/daftarsiswa', 'Dashboard::daftarSiswa');
+$routes->get('dashboard/admin', 'Dashboard::admin');
 
 
 
