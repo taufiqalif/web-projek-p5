@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title><?= $title; ?></title>
 
   <!-- Custom fonts for this template-->
   <link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -41,7 +41,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Projek P5</div>
       </a>
 
       <!-- Divider -->
@@ -80,8 +80,8 @@
                         <a class="collapse-item" href="buttons.html">Buttons</a>
                         <a class="collapse-item" href="cards.html">Cards</a>
                     </div>
-                </div>
-            </li>
+          </div>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
