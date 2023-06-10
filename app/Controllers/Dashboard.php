@@ -18,11 +18,21 @@ class Dashboard extends BaseController
         return view('dashboard/index', $data);
     }
 
+    public function daftarsiswa()
+    {
+        // Logika atau proses yang ingin dilakukan di halaman dashboard
+        $data = [
+            'title' => 'Daftar Siswa',
+            'message' => 'Selamat datang di halaman daftar siswa!'
+        ];
+        return view('dashboard/daftarsiswa', $data);
+    }
+    
     public function logout()
-  {
+    {
       // Lakukan logika logout di sini
-  
+
       // Redirect ke halaman login setelah logout
-      return redirect()->to(base_url('user/login'));
-  }
+        return redirect()->to(base_url('user/login'));
+    }
 }

@@ -58,6 +58,11 @@ $routes->group('user', ['namespace' => 'App\Controllers'], function($routes) {
     $routes->post('processRegistration', 'User::processRegistration', ['as' => 'user.processRegistration']);
 });
 
+// dashboard
+$routes->get('dashboard/dashboard', 'Dashboard::index');
+$routes->get('dashboard/daftarsiswa', 'Dashboard::daftarSiswa');
+
+
 
 /*
  * --------------------------------------------------------------------
