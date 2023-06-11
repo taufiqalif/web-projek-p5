@@ -7,7 +7,7 @@
 <div class="container-fluid">
 
   <!-- Page Heading -->
-  <h1 class="h3 mb-2 text-gray-800">Daftar Siswa</h1>
+  <h1 class="h3 mb-2 text-gray-800">Daftar Guru</h1>
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -33,6 +33,8 @@
               <td>@mdo</td>
               <td>
                 <a class="btn btn-primary btn-sm" href="#" role="button">Detail</a>
+                <a class="btn btn-success btn-sm" href="#" role="button">Edit</a>
+                <a class="btn btn-danger btn-sm" href="#" role="button">Delete</a>
               </td>
             </tr>
           </tbody>

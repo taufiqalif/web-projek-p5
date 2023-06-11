@@ -47,7 +47,7 @@ $routes->get('dashboard/signout', 'Dashboard::logout');
 
 
 
-$routes->group('user', ['namespace' => 'App\Controllers'], function($routes) {
+$routes->group('user', ['namespace' => 'App\Controllers'], function ($routes) {
     // Route untuk halaman login
     $routes->get('login', 'User::login', ['as' => 'user.login']);
     // Route untuk proses login
@@ -59,9 +59,15 @@ $routes->group('user', ['namespace' => 'App\Controllers'], function($routes) {
 });
 
 // dashboard
-$routes->get('dashboard/dashboard', 'Dashboard::index');
-$routes->get('dashboard/daftarsiswa', 'Dashboard::daftarSiswa');
+$routes->get('dashboard', 'Dashboard::index');
+$routes->get('daftarsiswa', 'Dashboard::daftarSiswa');
 $routes->get('dashboard/admin', 'Dashboard::admin');
+
+$routes->get('dashboard/projek/(:segment)', 'Dashboard::projek/$1');
+
+$routes->get('dashboard/siswa','Dashboard::siswa');
+$routes->get('dashboard/guru','Dashboard::guru');
+
 
 
 

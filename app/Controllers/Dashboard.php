@@ -49,6 +49,36 @@ class Dashboard extends BaseController
         }
     }
 
+    public function projek($projek)
+    {
+        $data = [
+            'title' => 'Projek ' . $projek,
+            'message' => 'Selamat datang di halaman Projek ' . $projek . '!',
+            'projek' => $projek
+        ];
+
+        return view('dashboard/tema/projek' . $projek, $data);
+    }
+
+    public function guru()
+    {
+        $data = [
+            'title' => 'Daftar Guru',
+            'message' => 'Selamat datang di halaman daftar guru!'
+        ];
+        return view('dashboard/admin/guru', $data);
+    }
+
+
+    public function siswa()
+    {
+        $data = [
+            'title' => 'Daftar Siswa',
+            'message' => 'Selamat datang di halaman daftar siswa!'
+        ];
+        return view('dashboard/admin/siswa', $data);
+    }
+
     public function logout()
     {
         // Lakukan logika logout di sini
